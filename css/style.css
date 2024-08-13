@@ -1,0 +1,58 @@
+
+        .div1 h1{
+            background-color: red;
+    
+        }
+        .menu{
+            display: flex ;
+            gap: 20px;
+            flex-direction: row;
+            list-style: none;
+        }
+        .active{
+            background-color: aqua;
+        }
+        .content {
+            display:flex;
+            flex-direction:row;
+        }
+        .content div{
+            height:25vh;
+            width:20%;
+            border: 10px solid black;
+
+        }
+        @media only screen and(max-width:600px){
+            body{
+                background-color: pink;
+            }
+            .container{
+                display: flex;
+                flex-direction: column;
+                width: 1vw;
+            }
+            .content{
+                width: 60vw;
+                height: 100%;
+            }
+        
+            
+     }
+     @media only screen and(max-width:1000px){
+        body{
+            background-color: lightblue;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 1vw;
+        }
+        .content{
+            width: 60vw;
+            height: 100%;
+        }
+     
+     }
+        
+     
+        

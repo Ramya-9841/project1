@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculator">
+        <input type="number" id="number1" class="input-box" placeholder="Number 1">
+        <input type="number" id="number2" class="input-box" placeholder="Number 2">
+        <br>
+        <button class="button" onclick="calculate('add')">Add</button>
+        <button class="button" onclick="calculate('subtract')">Subtract</button>
+        <button class="button" onclick="calculate('multiply')">Multiply</button>
+        <button class="button" onclick="calculate('divide')">Divide</button>
+        <div class="result" id="result">Result: </div>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            const num1 = parseFloat(document.getElementById('number1').value);
+            const num2 = parseFloat(document.getElementById('number2').value);
+            let result;
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                result = 'Please enter valid numbers';
+            } else {
+                switch (operation) {
+                    case 'add':
+                        result = num1 + num2;
+                        break;
+                    case 'subtract':
+                        result = num1 - num2;
+                        break;
+                    case 'multiply':
+                        result = num1 * num2;
+                        break;
+                    case 'divide':
+                        if (num2 === 0) {
+                            result = 'Cannot divide by zero';
+                        } else {
+                            result = num1 / num2;
+                        }
+                        break;
+                    default:
+                        result = 'Unknown operation';
+                }
+            }
+
+            document.getElementById('result').innerText = `Result: ${result}`;
+        }
+    </script> 
+</body>
+</html>
