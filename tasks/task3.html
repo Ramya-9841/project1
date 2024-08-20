@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbox and Button</title>
+</head>
+<body>
+    <h1>Add Values to Array</h1>
+    <form id="myForm">
+        <label for="myInput">Enter a value:</label>
+        <input type="text" id="myInput" required>
+        <button type="submit">Add to Array</button>
+    </form>
+
+    <script>
+        // Initialize an empty array
+        let myArray = [];
+
+        // Add an event listener to the form submission
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            // Prevent the form from submitting the traditional way
+            event.preventDefault();
+
+            // Capture the value from the textbox
+            let inputValue = document.getElementById('myInput').value;
+
+            // Add the value to the array
+            myArray.push(inputValue);
+
+            // Log the current state of the array to the console
+            console.log(myArray);
+
+            // Optionally, clear the textbox for the next entry
+            document.getElementById('myInput').value = '';
+        });
+    </script>
+</body>
+</html>

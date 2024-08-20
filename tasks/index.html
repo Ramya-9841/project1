@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>This is the main landing page for our website. Explore our services and contact us for more information.</p>
+        </section>
+        
+        <section>
+            <h2>Add a Value to the Array</h2>
+            <form id="arrayForm">
+                <label for="arrayInput">Enter a value:</label>
+                <input type="text" id="arrayInput" name="arrayInput" required>
+                <input type="submit" value="Add to Array">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let valuesArray = [];
+
+        document.getElementById('arrayForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const value = document.getElementById('arrayInput').value;
+            valuesArray.push(value);
+            
+            console.log('Current Array:', valuesArray);
+            
+            // Clear the input field
+            document.getElementById('arrayInput').value = '';
+        });
+    </script>
+</body>
+</html>
